@@ -16,8 +16,7 @@
 #import "TreasureProtocol.h"
 #import "BoatProtocol.h"
 
-//might have something do to here
-@interface RootViewController () <BoatProtocol>
+@interface RootViewController () <BoatProtocol, TreasureProtocol>
 
 @property (weak, nonatomic) IBOutlet UILabel *onBoatStatusLabel;
 @property (weak, nonatomic) IBOutlet UIButton *navigateToTreasureButton;
@@ -39,7 +38,6 @@
 
 @implementation RootViewController
 
-//nothing to modify here
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -49,7 +47,6 @@
     [self showInstructions];
 }
 
-//nothing to modify here
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -61,7 +58,6 @@
 
 //Boat Protocol: is everything setup correctly so that this callback will be called?
 // verify that this is called
-//nothing to modify here
 - (void)takeBoat:(NSString *)boatName {
     self.boatImage.image = [UIImage createWithImageNamed:boatName];
     
@@ -75,7 +71,6 @@
 
 //Treasure Protocol: is everything setup correctly so that this callback will be called?
 // verify that this is called
-//nothing to modify here
 - (void)returnAndTakeTreasure:(NSString *)treasureName {
     self.treasureImage.image = [UIImage createWithImageNamed:treasureName];
 
@@ -91,7 +86,7 @@
 - (void)triggerModalVC {
     DockerViewController *vc = [DockerViewController new];
 //    might have something to do here
-//    hint: delegate
+    vc.delegate = self;
     [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
@@ -100,23 +95,14 @@
 //    you need to configure the beachViewController properly
 //    in order for to retrieve the treasure you need to pass it the boatImageName and the pirateImageName
 //    and make sure that it is able to call the RootViewController callback used to retrieve the treasure
-//    hint: delegate
-//    hint: send the treasure and pirate image
+    vc.boatImageName = self.boatImage.image.imageName;
+    vc.pirateImageName = self.pirateImage.image.imageName;
+    vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
-
-
-
-
-
-
-
-
-
-
-// YOU DONT NEED TO LOOK AT THIS PART OR MODIFY ANY OF THIS
+// YOU DONT NEED TO LOOK AT THIS PART
 
 #pragma mark - UI
 - (void)populatePirateImage {
