@@ -27,8 +27,8 @@
 //LOOK AT the populateImages method
 //IT SEEMS LIKE WE NEED A WAY TO POPULATE the pirateImage and the boatImage, try getting the images from the RootViewController
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     [self populateImages];
     [self letPirateTakeTheTreasure:[self canGrabTreasure]];

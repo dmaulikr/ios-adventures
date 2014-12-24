@@ -29,11 +29,6 @@
     self.boatImage.image = [UIImage createWithImageNamed:@"pirate_ship"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - UI Events
 
 - (IBAction)grabTheBoat:(id)sender {
