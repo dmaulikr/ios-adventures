@@ -16,7 +16,7 @@
 @end
 
 //NOTHING MUCH TO DO HERE LOOK AT the takeBoat Protocol implemented by the RootViewController
-//IS [self.delegate takeBoat:self.boatImage.image.imageName]; called?
+//IS [self.delegate takeBoat:self.boatImage.image.imageName]; called when grabTheBoat callback is called?
 //IF NO it should be!
 
 @implementation DockerViewController

@@ -36,13 +36,6 @@
 }
 
 //nothing to modify here
-- (void)populateImages {
-    self.treasureImage.image = [UIImage createWithImageNamed:@"treasure"];
-    self.pirateImage.image = [UIImage createWithImageNamed:self.pirateImageName];
-    self.boatImage.image = [UIImage createWithImageNamed:self.boatImageName];
-}
-
-//nothing to modify here
 - (BOOL)canGrabTreasure {
     return (self.pirateImage.image != nil && self.boatImage.image != nil);
 }
@@ -66,6 +59,13 @@
 - (void)letPirateTakeTheTreasure:(BOOL)canGrabTreasure {
     self.treasureButton.hidden = !canGrabTreasure;
     self.noBoatNoTreasure.hidden = canGrabTreasure;
+}
+
+//nothing to modify here
+- (void)populateImages {
+    self.treasureImage.image = [UIImage createWithImageNamed:@"treasure"];
+    self.pirateImage.image = [UIImage createWithImageNamed:self.pirateImageName];
+    self.boatImage.image = [UIImage createWithImageNamed:self.boatImageName];
 }
 
 @end
