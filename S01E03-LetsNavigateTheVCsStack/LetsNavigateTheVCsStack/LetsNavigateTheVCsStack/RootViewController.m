@@ -39,24 +39,6 @@
 
 @implementation RootViewController
 
-//nothing to modify here
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Boat" style:UIBarButtonItemStyleDone target:self action:@selector(triggerModalVC)];
-    self.navigationItem.rightBarButtonItem = searchButton;
-    
-    [self showInstructions];
-}
-
-//nothing to modify here
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self populatePirateImage];
-}
-
-
 #pragma mark - Boat callbacks
 
 //Boat Protocol: is everything setup correctly so that this callback will be called?
@@ -119,6 +101,23 @@
 // YOU DONT NEED TO LOOK AT THIS PART OR MODIFY ANY OF THIS
 
 #pragma mark - UI
+//nothing to modify here
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithTitle:@"Boat" style:UIBarButtonItemStyleDone target:self action:@selector(triggerModalVC)];
+    self.navigationItem.rightBarButtonItem = searchButton;
+    
+    [self showInstructions];
+}
+
+//nothing to modify here
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self populatePirateImage];
+}
+
 - (void)populatePirateImage {
     self.pirateImage.image = [UIImage createWithImageNamed:@"9gag_pirate"];
 }

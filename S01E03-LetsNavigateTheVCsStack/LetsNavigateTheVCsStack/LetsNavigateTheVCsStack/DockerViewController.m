@@ -21,14 +21,7 @@
 
 @implementation DockerViewController
 
-//nothing to modify here
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.title = @"The dock";
-    
-    self.boatImage.image = [UIImage createWithImageNamed:@"pirate_ship"];
-}
+
 
 #pragma mark - UI Events
 
@@ -38,4 +31,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+
+
+
+
+
+
+//NOTHING INTERESTING HERE
+//nothing to modify here
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.title = @"The dock";
+    
+    self.boatImage.image = [UIImage createWithImageNamed:@"pirate_ship"];
+}
 @end
