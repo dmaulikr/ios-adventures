@@ -34,34 +34,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     NSLog(@"%@ %@", self.title, NSStringFromSelector(_cmd));
+    
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSLog(@"%@ %@", self.title, NSStringFromSelector(_cmd));
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
+    
     ++self.number;
-    self.leftMeAlone.text = [NSString stringWithFormat:@"You left me alone %ld times", self.number];
+    self.leftMeAlone.text = [NSString stringWithFormat:@"You left me alone %ld times", (long)self.number];
 }
 
 - (void)dealloc {
-    NSLog(@"%@ %@", self.title, NSStringFromSelector(_cmd));
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 
@@ -84,6 +89,8 @@
 - (IBAction)goToBlueView:(id)sender {
     ViewController *vc = [[ViewController alloc] initWithTitle:@"blueVC"];;
     vc.view.backgroundColor = [UIColor blueColor];
+    vc.view.opaque = NO;
+    vc.view.alpha = 0.5;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

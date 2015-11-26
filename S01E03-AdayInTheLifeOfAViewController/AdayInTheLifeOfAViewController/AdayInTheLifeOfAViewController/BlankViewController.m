@@ -23,30 +23,34 @@
     self.title = @"Green VC";
     self.view.backgroundColor = [UIColor greenColor];
     
-    NSLog(@"%@ %@", self.title, NSStringFromSelector(_cmd));
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSLog(@"%@ %@", self.title, NSStringFromSelector(_cmd));
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+   
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 
 - (void)dealloc {
-    NSLog(@"%@ %@", self.title, NSStringFromSelector(_cmd));
+    NSLog(@"%@:%s", self.title, __PRETTY_FUNCTION__);
 }
 @end
